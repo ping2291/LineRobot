@@ -8,7 +8,7 @@ var bot = linebot({
 });
 
 bot.on('message', function (event) {
-  console.log('message : ' + e);
+  console.log('message : ' + event);
   event.reply(event.message.text).then(function (data) {
       // success
       console.log('success : ' + data);
