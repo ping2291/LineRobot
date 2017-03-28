@@ -12,9 +12,9 @@ var bot = linebot({
 bot.on('message', function (event) {
   if(/日幣|日圓|JPY|jpy|¥/g.test(event.message.text)){
     //resquest('http://rate.bot.com.tw/xrt?Lang=zh-TW');
-    queryRate();
+    queryRate(event);
   }else{
-    reply(event.message.text);
+    reply(event, event.message.text);
   }
 });
 
@@ -33,7 +33,7 @@ var server = app.listen(process.env.PORT || 8080, function() {
   console.log("App now running on port : ", port);
 });
 
-function reply(msg){
+function reply(e, msg){
   e.reply(msg).then(function(data){
     //success
   }).catch(function(error){
@@ -42,7 +42,7 @@ function reply(msg){
   });
 }
 
-function queryRate(){
+function queryRate(e){
   request('http://rate.bot.com.tw/xrt?Lang=zh-TW', function(error, response, body){
     if(error){
       console.log('error:', error); // Print the error if one occurred
@@ -63,6 +63,6 @@ function queryRate(){
     });
     // console.log($($('.rate-content-cash[data-table=本行現金買入]')[index]).text());
     content += $($('.rate-content-cash[data-table=本行現金買入]')[index]).text();
-    reply(content);
+    reply(e, content);
   });
 }
