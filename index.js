@@ -57,7 +57,7 @@ function queryRate(){
     // var index = 0;
 
     rateList.each(function(i,e){
-      allRate[$(this).text().trim()] = $($('.rate-content-cash[data-table=本行現金買入]')[index]).text();
+      allRate[$(this).text().trim()] = $($('.rate-content-cash[data-table=本行現金買入]')[i]).text();
       // if(.includes('日圓')){
       //   // console.log(i, $(this).text().trim());
       //   index = i;
