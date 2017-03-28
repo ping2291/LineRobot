@@ -63,6 +63,7 @@ function queryRate(){
       //   index = i;
       // }
     });
+    console.log('allRate : ', allRate);
     // console.log($($('.rate-content-cash[data-table=本行現金買入]')[index]).text());
     // content += $($('.rate-content-cash[data-table=本行現金買入]')[index]).text();
   });
