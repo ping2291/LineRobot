@@ -12,7 +12,7 @@ var bot = linebot({
 bot.on('message', function (event) {
   if(/日幣|日圓|JPY|jpy|¥/g.test(event.message.text)){
     //resquest('http://rate.bot.com.tw/xrt?Lang=zh-TW');
-    reply(event, '日圓現金買入匯率為 : ' + allRate['日幣']);
+    reply(event, '日圓現金買入匯率為 : ' + allRate['日圓 (JPY)']);
   }else{
     reply(event, event.message.text);
   }
