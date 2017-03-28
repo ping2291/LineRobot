@@ -11,7 +11,6 @@ bot.on('message', function (event) {
   console.log('message : ', event);
   event.reply(event.message.text).then(function (data) {
       // success
-      console.log('success : ', data);
   }).catch(function (error) {
       // error
       console.log('error : ', error);
@@ -20,6 +19,7 @@ bot.on('message', function (event) {
 
 const app = express();
 const linebotParser = bot.parser();
+//line Basic information => Webhook URL https://mylinebotv1.herokuapp.com/linewebhook
 app.post('/linewebhook', linebotParser);
 //app.listen(3000);
 
