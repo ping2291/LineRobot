@@ -8,13 +8,13 @@ var bot = linebot({
 });
 
 bot.on('message', function (event) {
-  console.log('message : ' + event);
+  console.log('message : ', event);
   event.reply(event.message.text).then(function (data) {
       // success
-      console.log('success : ' + data);
+      console.log('success : ', data);
   }).catch(function (error) {
       // error
-      console.log('error : ' + error);
+      console.log('error : ', error);
   });
 });
 
@@ -26,5 +26,5 @@ app.post('/linewebhook', linebotParser);
 //因為 express 預設走 port 3000，而 heroku 上預設卻不是，要透過下列程式轉換
 var server = app.listen(process.env.PORT || 8080, function() {
   var port = server.address().port;
-  console.log("App now running on port", port);
+  console.log("App now running on port : ", port);
 });
