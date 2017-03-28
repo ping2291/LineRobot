@@ -14,7 +14,7 @@ bot.on('message', function (event) {
     //resquest('http://rate.bot.com.tw/xrt?Lang=zh-TW');
     event.reply(rate.queryRate(event.message.text));
   }else{
-    event.reply(event, event.message.text);
+    event.reply(event.message.text);
   }
 });
 
@@ -34,4 +34,7 @@ var server = app.listen(process.env.PORT || 8080, function() {
   //每1小時抓取一次匯率
   rate.updateRate();
   setInterval(rate.updateRate, updateDuringTime);
+  // setTimeout(function(){
+  //   rate.queryRate('$jpy');
+  // }, 2000);
 });
