@@ -12,7 +12,7 @@ var bot = linebot({
 bot.on('message', function (event) {
   const input = event.message.text.trim();
   console.log('text: ', input);
-  if(/^$/g.test(input)){
+  if(/^\$/g.test(input)){
     //resquest('http://rate.bot.com.tw/xrt?Lang=zh-TW');
     event.reply(rate.queryRate(input));
   }else{
