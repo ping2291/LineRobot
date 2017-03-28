@@ -32,11 +32,9 @@ function updateRate(){
 }
 
 function queryRate(queryText){
-  console.log('type text: ', queryText);
   for(let i = 0 ; i < rateRules.length ; i++){
     if(rateRules[i].test(queryText)){
-      console.log(rateTypes[i] + ' 買入 : ' + allRate[rateTypes[i]]);
-      // return allRate[rateTypes[i]];
+       return rateTypes[i] + ' 買入匯率 : ' + allRate[rateTypes[i]];
     }
   }
 }
